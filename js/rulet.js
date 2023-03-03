@@ -1,4 +1,4 @@
-const rulet = (e, callBack) => {
+const rulet = (e, callBack,gameList) => {
   if (e) e.target.remove();
   const prev = document.createElement('button');
   prev.style.display = 'block'
@@ -11,7 +11,7 @@ const rulet = (e, callBack) => {
     canvasWrap.remove()
     arrow.remove()
     inputBox.remove()
-    callBack(rulet)
+    callBack(gameList)
   });
   const wrap = document.querySelector('.wrap');
   const arrow = document.createElement('div')
@@ -86,7 +86,7 @@ const rulet = (e, callBack) => {
       arrow.remove()
       inputBox.remove()
       prev.remove()
-      return rulet(null,callBack)
+      return rulet(null,callBack,gameList)
     }, 10800)
   })
 
