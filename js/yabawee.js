@@ -6,8 +6,8 @@ const yabawee = (gameMenu) => {
     e.target.remove();
     gameMenu();
     yabaweeWrap.remove();
-    clearInterval(interval);
-    clearTimeout(timer)
+    // clearInterval(interval);
+    // clearTimeout(timer)
   })
   wrap.append(prevBtn)
   const yabaweeWrap = document.createElement('div');
@@ -19,9 +19,9 @@ const yabawee = (gameMenu) => {
   const btn3 = document.createElement('button');
   const btn5 = document.createElement('button');
   const btn8 = document.createElement('button');
-  btn3.style.display = 'block';
-  btn5.style.display = 'block';
-  btn8.style.display = 'block';
+  btn3.style.cssText = 'display:block; margin-bottom: 10px;';
+  btn5.style.cssText = 'display:block; margin-bottom: 10px;';
+  btn8.style.cssText = 'display:block; margin-bottom: 10px;';
   btn3.innerText = '컵 3개 (정답시 1.5배)';
   btn5.innerText = '컵 5개 (정답시 2배)';
   btn8.innerText = '컵 8개 (정답시 3배)';
