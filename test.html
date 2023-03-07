@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrap {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap"></div>
+  <script>
+    const wrap = document.querySelector('.wrap');
+    const yabaweeWrap = document.createElement('div');
+    yabaweeWrap.style.cssText = `
+      width:100%; height: 50vh;
+      position:relative;
+    `
+
+    const cupCount = 3;
+    const centerCha = (100 / cupCount) / 2;
+    const cupWidth = (100 / cupCount) - 10;
+    let cups = []
+    let sum = 1
+    for (let i = 1; i <= cupCount; i++) {
+      const cup = document.createElement('div');
+
+      cup.style.cssText = `
+      width:${cupWidth}%;
+       height:30%; 
+       clip-path: polygon(30% 0%, 70% 0%, 80% 100%, 20% 100%);
+       background-color:#3CB371;
+       position:absolute; 
+       bottom:0; 
+       left: calc(${centerCha * sum}% - ${cupWidth / 2}% ); transition: all 0.4s linear`;
+      yabaweeWrap.append(cup)
+      cups.push(cup)
+      sum += 2
+    }
+
+    let interval = setInterval(() => {
+      cups.sort(() => Math.random() - 0.5);
+      sum = 1
+      cups.forEach((cup, idx) => {
+        cup.style.left = `calc(${centerCha * sum}% - ${cupWidth / 2}% )`;
+        sum += 2
+      })
+    }, 500)
+
+    setTimeout(() => {
+      clearInterval(interval)
+    }, 10000)
+    wrap.append(yabaweeWrap);
+  </script>
+</body>
+
+</html>

@@ -13,7 +13,7 @@ const work = (gameList,gameMenu) => {
   workWrap.style.width = '100vw'
   workWrap.style.height = '80vh'
   const descText = document.createElement('div');
-  descText.style.height = '10%'
+  descText.style.height = '12%'
   descText.innerText = '돌 10개당 500원씩 쳐주지 빨리 일해!'
   const getCountText = document.createElement('div');
   getCountText.innerText = `채취한 돌 갯수 : 0`
@@ -42,7 +42,7 @@ const work = (gameList,gameMenu) => {
   descText.append(getCountText,changeMoneyBtn);
   workWrap.append(descText);
   const stoneScope = document.createElement('div');
-  stoneScope.style.cssText = 'position:relative;width:100%;height:90%;'
+  stoneScope.style.cssText = 'position:relative;width:100%;height:88%;'
   workWrap.append(stoneScope);
 
   let stoneCount = 0;
@@ -51,7 +51,7 @@ const work = (gameList,gameMenu) => {
   let interval = setInterval(()=>{
     if (stoneCount == 10) return
     const stone = document.createElement('button');
-    let count = 10
+    let count = 8
     stone.innerHTML = `돌 <br/> 체력: ${count}`
     const top = Math.floor(Math.random() * 96)
     const left = Math.floor(Math.random() * 96)
