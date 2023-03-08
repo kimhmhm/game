@@ -14,7 +14,7 @@ const work = (gameList,gameMenu) => {
   workWrap.style.height = '80vh'
   const descText = document.createElement('div');
   descText.style.height = '12%'
-  descText.innerText = '돌 10개당 500원씩 쳐주지 빨리 일해!'
+  descText.innerText = '돌 10개당 1000원씩 쳐주지 빨리 일해!'
   const getCountText = document.createElement('div');
   getCountText.innerText = `채취한 돌 갯수 : 0`
   const changeMoneyBtn = document.createElement('button');
@@ -29,7 +29,7 @@ const work = (gameList,gameMenu) => {
     getCount = rest
     getCountText.innerText = `채취한 돌 갯수 : ${getCount}`
 
-    const changeMoney = result * 500
+    const changeMoney = result * 1000
     let userInfo = JSON.parse(window.localStorage.getItem('userInfo'))
     const newMoney = userInfo.money + changeMoney
     userInfo = {...userInfo,money : newMoney}

@@ -56,7 +56,7 @@ const introModule = (callBack) => {
           userInfo.name = prompt('어서오세요! 당신의 이름을 적어주세요', '홍길동')
           flag = !userInfo.name ? true : false
         }
-        userInfo.money = 100000
+        userInfo.money = 20000
         userInfo.lucky = 0.3
         storage.setItem('userInfo', JSON.stringify(userInfo))
         userInfo = { ...JSON.parse(storage.getItem('userInfo')) }
