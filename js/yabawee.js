@@ -64,7 +64,7 @@ const yabawee = (gameMenu) => {
          bottom:0;
          color:#fff;
          text-align:center;
-         left: calc(${centerCha * sum}% - ${cupWidth / 2}% ); transition: all 0.3s linear`;
+         left: calc(${centerCha * sum}% - ${cupWidth / 2}% ); transition: all 0.2s linear`;
 
       if (i == Math.ceil(cupCount / 2)) {
         cup.dom.style.bottom = `${cupWidth / 3}vw`;
@@ -147,7 +147,7 @@ const yabawee = (gameMenu) => {
             }
             sum += 2
           })
-        }, 380)
+        }, 300)
 
         let timer = setTimeout(() => {
           clearInterval(interval)
@@ -198,7 +198,7 @@ const yabawee = (gameMenu) => {
           })
         }, 15000)
 
-      }, 380)
+      }, 300)
 
     })
     yabaweeWrap.append(startBtn);
