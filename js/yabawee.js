@@ -147,7 +147,7 @@ const yabawee = (gameMenu) => {
             }
             sum += 2
           })
-        }, 300)
+        }, 380)
 
         let timer = setTimeout(() => {
           clearInterval(interval)
@@ -198,7 +198,7 @@ const yabawee = (gameMenu) => {
           })
         }, 15000)
 
-      }, 300)
+      }, 380)
 
     })
     yabaweeWrap.append(startBtn);
