@@ -70,7 +70,7 @@ const work = (gameList,gameMenu) => {
     }) 
     stoneScope.append(stone);
     stoneCount += 1;
-  },2000)
+  },1300)
 
   wrap.append(workWrap);
 }
