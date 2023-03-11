@@ -1,6 +1,7 @@
 const yabawee = (gameMenu) => {
   const wrap = document.querySelector('.wrap');
   const prevBtn = document.createElement('button');
+  const animationSpeed = 0.25
   prevBtn.innerText = '이전으로'
   prevBtn.addEventListener('click', (e) => {
     e.target.remove();
@@ -65,7 +66,8 @@ const yabawee = (gameMenu) => {
          bottom:0;
          color:#fff;
          text-align:center;
-         left: calc(${centerCha * sum}% - ${cupWidth / 2}% ); transition: all 0.2s linear`;
+         left: calc(${centerCha * sum}% - ${cupWidth / 2}% );
+         transition: all ${animationSpeed}s linear`;
 
       if (i == Math.ceil(cupCount / 2)) {
         cup.dom.style.backgroundColor = `transparent`
@@ -159,16 +161,9 @@ const yabawee = (gameMenu) => {
           })
         let interval = setInterval(() => {
           cups.forEach((cup, idx) => {
-            // if (idx == cups.length - 1) {
-            //   cups.reverse()
-            //   return
-            // }
-            // console.log(cups.length)
             if (idx == cups.length - 1) return
             if ((Math.random() - 0.5) < 0) return
             // 바뀔 경우 서로의 레프트값 전환
-            // cup.dom.style.left = cups[idx+1].nowLeft
-            // cups[idx+1].dom.style.left = cup.nowLeft
             const nowCupLeft = cup.nowLeft
             const nextCupLeft = cups[idx + 1].nowLeft
             cup.nowLeft = nextCupLeft
@@ -180,15 +175,10 @@ const yabawee = (gameMenu) => {
             // 인덱스번호 전환
             cups[idx] = cups[idx + 1];
             cups[idx + 1] = cup;
-            // cup.dom.style.left = `calc(${centerCha * sum}% - ${cupWidth / 2}% )`;
-            if (cup.isCenter) {
-              // ball.style.left = `${cup.nowLeft}% + ${cupWidth / 2}%)`;
-            }
-            // sum += 2
           })
 
 
-        }, 250)
+        }, animationSpeed * 1000)
 
         let timer = setTimeout(() => {
           clearInterval(interval)
