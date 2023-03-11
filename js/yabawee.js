@@ -89,7 +89,7 @@ const yabawee = (gameMenu) => {
            width:100%;
            height:100%; 
            clip-path: polygon(10% 0%, 90% 0%,100% 100%, 0% 100%);
-           background-color:blue;
+           background-color:#C21010;
            position:absolute;
            border-bottom: 2px solid #fff ;
            bottom:${cupWidth / 3}vw;
